@@ -22,24 +22,27 @@ with open("data.txt", "r") as file:
 
 # Print the list of tuples
 # print(records)
-spacerLenght = 20
-recordVisibleLength = 100
-print(f"LINKS","-"*spacerLenght,"DESC")
-# print()
 
-def getStringDiffSpacer(str1, str2):
+recordVisibleLength = 80
+
+def getStringDiffSpacer(str1, str2, spacer="-"):
 
     dif = recordVisibleLength-len(str1)-len(str2)
     
+    # print(dif)
 
-    return dif
+    return spacer*dif
+
+print(f"LINKS",getStringDiffSpacer("LINKS","LINKS","*"),"LINKS\n")
+# print("***",getStringDiffSpacer("***","***"),"***")
+# print()
 
 
 for url, desc in records:
 
     showUrl = url[:30]+"..." if len(url) > 20 else url
 
-    print(f"{showUrl} | {desc}")
-    print(getStringDiffSpacer(showUrl,desc))
+    # print(f"{showUrl}",getStringDiffSpacer(showUrl,desc),desc)
+    print(desc,getStringDiffSpacer(showUrl,desc),showUrl)
 
 
