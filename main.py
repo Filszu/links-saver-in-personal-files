@@ -1,6 +1,12 @@
+#  python main.py filszu.links 
+import getFromFile
+file = "data.txt"
+external = getFromFile.readData()
+if external:
+    file = external 
 
 
-with open("data.txt", "r") as file:
+with open(file, "r") as file:
 
     records = []
 
@@ -33,7 +39,7 @@ def getStringDiffSpacer(str1, str2, spacer="-"):
 
     return spacer*dif
 
-print(f"LINKS",getStringDiffSpacer("LINKS","LINKS","*"),"LINKS\n")
+print(f"LINKS",getStringDiffSpacer("LINKS","DESCRIPTION","*"),"DESCRIPTION\n")
 # print("***",getStringDiffSpacer("***","***"),"***")
 # print()
 
@@ -42,7 +48,8 @@ for url, desc in records:
 
     showUrl = url[:30]+"..." if len(url) > 20 else url
 
-    # print(f"{showUrl}",getStringDiffSpacer(showUrl,desc),desc)
-    print(desc,getStringDiffSpacer(showUrl,desc),showUrl)
+    print(f"{showUrl}",getStringDiffSpacer(showUrl,desc),desc)
+    # print(desc,getStringDiffSpacer(showUrl,desc),showUrl)
 
 
+input()
