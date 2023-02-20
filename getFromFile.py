@@ -11,7 +11,7 @@ def readData():
         # Parse the command line arguments
         args = parser.parse_args()
 
-        print(args.file)
+        # print(args.file)
         return args.file
     except:
         print("reading file Error - reading from example file")

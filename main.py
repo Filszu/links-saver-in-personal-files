@@ -1,5 +1,6 @@
 #  python main.py filszu.links 
 import getFromFile
+import browserTools
 file = "data.txt"
 external = getFromFile.readData()
 if external:
@@ -18,7 +19,7 @@ with open(file, "r") as file:
 
 
         if len(parts) == 1:
-            link, desc = parts[0], None
+            link, desc = parts[0], ""
             # Otherwise, set the link and description
         else:
             link, desc = parts
@@ -52,4 +53,9 @@ for url, desc in records:
     # print(desc,getStringDiffSpacer(showUrl,desc),showUrl)
 
 
-input()
+re = input("open all links in browser? (y/n)")
+
+if re.lower() == "y":
+    for url,d in records:
+        print(url)
+        browserTools.openUrl(url)

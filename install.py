@@ -9,6 +9,7 @@ script_dir = os.path.dirname(os.path.realpath(__file__))
 script_name = "main.py"
 
 # Set the file extension to associate with the script
+# file_ext = ".link"
 file_ext = ".links"
 
 # Construct the path to the Python executable and the script file
@@ -36,5 +37,7 @@ winreg.SetValue(subkey, "", winreg.REG_SZ, command)
 print(f"File extension {file_ext} is now associated with {script_name}.")
 
 input()
+
+
 
 # this code has been generated with chat gpt support
